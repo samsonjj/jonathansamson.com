@@ -2,7 +2,7 @@ source_files=./build/*
 temp_dir=/tmp/jonathansamson.com-build
 target_dir=/home/webmaster/jonathansamson.com
 
-# npm run build
+npm run build
 
 # clear and recreate $temp_dir
 mkdir -p $temp_dir

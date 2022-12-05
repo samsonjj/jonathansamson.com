@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 
+import React from 'react';
+
 function App() {
   return (
     <div className="App">
@@ -16,6 +18,20 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
+        </a>
+        <a
+          className="App-link"
+          href="/blog"
+          rel="noopener noreferrer"
+        >
+          Blog
+        </a>
+        <a
+          className="App-link"
+          href="/pixel-tester"
+          rel="noopener noreferrer"
+        >
+          Pixel Tester
         </a>
       </header>
     </div>
