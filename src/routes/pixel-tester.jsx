@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PixelFunctions from '../lib/pixel/pixelEvents';
 import blockedPixel from './assets/blocked-pixel.png';
 import pixelNetworkEvent from './assets/pixel-network-headers.png';
+
 
 function purchase() {
   let form = document.getElementById('purchase-form');
@@ -13,13 +14,31 @@ function purchase() {
 }
 
 function standardEvent() {
+  // fbq('track', 'Lead');
+}
 
+function pixelIsReady() {
+  return window.fbq.version != '2.0';
 }
 
 export default function PixelTester() {
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    console.log('creating interval');
+    const interval = setInterval(() => {
+      if (pixelIsReady()) {
+        console.log('pixel is ready!');
+        setReady(true); 
+      }
+    }, 200);
+  }, []);
+
   return (
     <>
-      <p style={{marginBlockEnd: '0em'}}>Note: PageView is already generated on page load. You don't have to click this button again.</p>
+      <p style={{
+        background: ready ? 'green': 'red',
+      }}>{ready ? 'Pixel is ready.': 'Pixel is not initialized yet.'}</p>
+      <p style={{marginBlockEnd: '0em'}}>Note: PageView is already generated on page load. You don't have to click this button again unless you really want to.</p>
 
       <button onClick={() => PixelFunctions.pageView()}>PageView</button><br/><br/>
 {/* 
