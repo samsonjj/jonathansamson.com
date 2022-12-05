@@ -12,6 +12,49 @@ code {
     monospace;
 }
 
+.center-contents {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  /* padding-left: 3em; */
+  /* padding-right: 3em; */
+  justify-self: center;
+  height: auto;
+  max-width: 80%;
+  display: block;
+}
+
+.form-description {
+  margin: 0;
+}
+
+.simple-form {
+  display: flex;
+  width: 400px;
+  flex-wrap: wrap;
+}
+
+.simple-form > .form-header {
+  margin-bottom: 16px;
+}
+
+.simple-form > .form-header > h2{
+  margin: 0px;
+}
+
+.simple-form > .form-child {
+  width: 100%;
+}
+
+.simple-form > .form-child > input {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+
+
 /* 
 html {
   box-sizing: border-box;
