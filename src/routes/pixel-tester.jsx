@@ -37,7 +37,7 @@ export default function PixelTester() {
     <>
       <p style={{
         background: ready ? 'green': 'red',
-      }}>{ready ? 'Pixel is ready.': 'Pixel is not initialized yet.'}</p>
+      }}>{ready ? 'Pixel is ready.': 'Pixel is not initialized yet. (May be blocked by ad blockers, try incognito mode)'}</p>
       <p style={{marginBlockEnd: '0em'}}>Note: PageView is already generated on page load. You don't have to click this button again unless you really want to.</p>
 
       <button onClick={() => PixelFunctions.pageView()}>PageView</button><br/><br/>
