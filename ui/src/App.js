@@ -13,6 +13,13 @@ function App() {
         </p>
         <a
           className="App-link"
+          href="https://donate.stripe.com/5kA5mVc3E2xiftK288"
+          rel="noopener noreferrer"
+        >
+          Donate
+        </a>
+        <a
+          className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"

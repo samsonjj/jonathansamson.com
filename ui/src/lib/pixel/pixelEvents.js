@@ -5,7 +5,6 @@ function purchaseEvent({ value, currency }) {
 }
 
 function pageView() {
-  console.log('doinga page view');
   ReactPixel.pageView();
 }
 

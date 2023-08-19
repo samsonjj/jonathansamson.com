@@ -12,6 +12,7 @@ import {
 import ErrorPage from './routes/error-page';
 import Blog from './routes/blog';
 import PixelTester from './routes/pixel-tester';
+import Test from './routes/test';
 
 import ReactPixel from 'react-facebook-pixel';
 
@@ -23,7 +24,7 @@ const options = {
 
 ReactPixel.init('1046126335969327', advancedMatching, options);
 console.log("ReactPixel initialized.");
-// ReactPixel.pageView();
+ReactPixel.pageView();
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: "/blog",
     element: <Blog />,
+  },
+  {
+    path: "/test",
+    element: <Test />,
   },
   {
     path: "/blog/:blogId",

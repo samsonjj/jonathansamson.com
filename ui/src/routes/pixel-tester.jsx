@@ -38,24 +38,25 @@ class InputDefinition {
 
 function SimpleForm(props) {
   let rows = props.questions.map((question) => 
-    <div class="form-child">
+    <div key={question.id} className="form-child">
       <label htmlFor={question.id}>{question.label}</label>
       <input type="text" id={question.id}/><br/>
     </div>
   );
   return (
-    <form class="simple-form" id={props.id} onSubmit={(e) => {
+    <form className="simple-form" id={props.id} onSubmit={(e) => {
+      console.log('submitted');
         e.preventDefault();
         if (props.onSubmit) {
           props.onSubmit();
         }
     }}>
-      <div class="form-header">
+      <div className="form-header">
         { props.title && <h2>{props.title || 'default title'}</h2> }
-        { props.description && <p class='form-description'>{props.description || 'default title'}</p> }
+        { props.description && <p className='form-description'>{props.description || 'default title'}</p> }
       </div>
       {rows}
-      <div class="form-child">
+      <div className="form-child">
         <input type="submit" value={props.buttonText || "Click me"}/>
       </div>
     </form>
@@ -137,7 +138,7 @@ export default function PixelTester() {
           Find the event id by looking at the network tab events, or in the Pixel Helper. Please take a bit to look through the network events, specifically the url query parameters.
         </p>
         <br />
-        <div class="center-contents">
+        <div className="center-contents">
           <img src={pixelNetworkEvent} alt="network event in chrome debugging tools"></img>
         </div>
         <h3>Analyze</h3>

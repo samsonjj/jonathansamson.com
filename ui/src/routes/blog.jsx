@@ -1,4 +1,5 @@
 import React from 'react';
+import Markdown from 'markdown-to-jsx'
 
 const blogs = {
   1: 'Hello',
@@ -15,6 +16,8 @@ function blogListItems() {
 }
 
 export default function Root() {
+  // let markdown = await fetch('./test.md').then((r) => r.text());
+  let markdown = 'hello';
   return (
     <>
       <div id="sidebar">
